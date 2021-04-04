@@ -45,6 +45,7 @@ export class UserDetailComponent implements OnInit {
     this.usrsvc.get(+this.id).subscribe(
       res => {
         console.log("User:", res);
+        this.user = res;
       },
       err => {
         console.error(err);
