@@ -35,6 +35,7 @@ export class UserLoginComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.sys.chkLogin();
     this.sys.loggedInUser = null;
   }
 

@@ -19,6 +19,17 @@ import { SearchVendorPipe } from './search-vendor.pipe';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { SearchProductPipe } from './search-product.pipe';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { SearchRequestPipe } from './search-request.pipe';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+
 
 
 
@@ -38,7 +49,18 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
     SearchVendorPipe,
     VendorDetailComponent,
     VendorEditComponent,
-    VendorCreateComponent
+    VendorCreateComponent,
+    ProductListComponent,
+    SearchProductPipe,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductCreateComponent,
+    RequestListComponent,
+    SearchRequestPipe,
+    RequestCreateComponent,
+    RequestEditComponent,
+    RequestDetailComponent
+
  
  
   ],

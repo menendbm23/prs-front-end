@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+<div>
+    <div>
+        <span>Request Detail</span>
+    </div>
+    <table class="table table-sm" *ngIf="request">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="request.id" type="number" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <input [(ngModel)]="request.description" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Justification</th>
+            <td>
+                <input [(ngModel)]="request.justification" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Rejection Reason</th>
+            <td>
+                <input [(ngModel)]="request.rejectionReason" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Delivery Mode</th>
+            <td>
+                <input [(ngModel)]="request.deliveryMode" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>
+                <input [(ngModel)]="request.status" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>
+                <input [(ngModel)]="rquest.total" type="number" disabled>
+            </td>
+        </tr>
+    </table>
+    <button (click)="edit()" class="btn btn-warning">Edit</button> |
+    <button (click)="toggleVerify()" class="btn btn-danger">Danger</button>
+    <span *ngIf="showVerify">
+       | <button (click)="delete()" class="btn btn-danger">Verify Delete</button>
+    </span>
+</div>

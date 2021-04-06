@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+<div>
+    <div>
+        <span>User Create</span>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Vendor</th>
+            <td>
+                <select [(ngModel)]="product.vendor">
+                    <option *ngFor="let vendor of vendors" [ngValue]="vendor">{{vendor.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>PartNumber</th>
+            <td>
+                <input [(ngModel)]="product.partNumber" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <input [(ngModel)]="product.name" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>
+                <input [(ngModel)]="product.price" type="number">
+            </td>
+        </tr>
+        <tr>
+            <th>Unit</th>
+            <td>
+                <input [(ngModel)]="product.unit" type="text">
+            </td>
+        </tr>
+    </table>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>
