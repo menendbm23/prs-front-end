@@ -43,12 +43,12 @@
         <tr>
             <th>Total</th>
             <td>
-                <input [(ngModel)]="rquest.total" type="number" disabled>
+                <input [(ngModel)]="request.total" type="number" disabled>
             </td>
         </tr>
     </table>
     <button (click)="edit()" class="btn btn-warning">Edit</button> |
-    <button (click)="toggleVerify()" class="btn btn-danger">Danger</button>
+    <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>
     <span *ngIf="showVerify">
        | <button (click)="delete()" class="btn btn-danger">Verify Delete</button>
     </span>

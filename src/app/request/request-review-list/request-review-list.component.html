@@ -1,23 +1,19 @@
 <app-menu></app-menu>
 <div>
     <div>
-        <tr>
-        <span>Request List</span>
-        </tr>
-        <span><a routerLink="/requests/create">Create</a></span> |
-        <span><input [(ngModel)]="searchCriteria" type="text" placeholder="Search"></span>
+        <span>Request in Review</span>
     </div>
     <table class="table table-sm">
         <tr>
             <th>Id</th>
             <th>Description</th>
-            <th>RejectionReason</th>
+            <th>Rejection Reason</th>
             <th>Status</th>
             <th>Total</th>
             <th>User</th>
             <th>Actions</th>
         </tr>
-        <tr *ngFor="let request of requests | searchRequest:searchCriteria">
+        <tr *ngFor = "let request of requests">
             <td>{{request.id}}</td>
             <td>{{request.description}}</td>
             <td>{{request.rejectionReason}}</td>
@@ -25,10 +21,8 @@
             <td>{{request.total | currency}}</td>
             <td>{{request.user.userName}}</td>
             <td>
-                <a routerLink="/requests/detail/{{request.id}}">Detail</a> |
-                <a routerLink="/requests/edit/{{request.id}}">Edit</a> |
-                <a routerLink="/requestline/list/{{request.id}}">Lines</a>
+                <a routerLink="/requestline/list-review/{{request.id}}">Review</a> 
             </td>
         </tr>
-    </table>
+        </table>
 </div>

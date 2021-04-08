@@ -18,7 +18,11 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
-
+import { RequestlineListComponent } from './request/requestline-list/requestline-list.component';
+import { LineitemCreateComponent } from './lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './lineitem/lineitem-edit/lineitem-edit.component';
+import { RequestlineReviewComponent } from './request/requestline-review/requestline-review.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 
 
 const routes: Routes = [
@@ -41,6 +45,12 @@ const routes: Routes = [
   { path: 'requests/create', component: RequestCreateComponent },
   { path: 'requests/edit/:id', component: RequestEditComponent },
   { path: 'requests/detail/:id', component: RequestDetailComponent },
+  { path: 'requestline/list/:id', component: RequestlineListComponent },
+  { path: 'lineitem/create/:rid', component: LineitemCreateComponent },
+  { path: 'lineitem/edit/:id', component: LineitemEditComponent },
+  { path: 'request/review/list', component: RequestReviewListComponent  },
+  { path: 'requestline/review', component: RequestlineReviewComponent },
+  { path: 'requestline/list-review/:id', component: RequestlineReviewComponent },
   { path: 'login', component: UserLoginComponent},
 
   { path: '**', component: HomeComponent }

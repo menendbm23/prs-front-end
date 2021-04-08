@@ -29,6 +29,12 @@ import { SearchRequestPipe } from './search-request.pipe';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestlineListComponent } from './request/requestline-list/requestline-list.component';
+import { RequestlineReviewComponent } from './request/requestline-review/requestline-review.component';
+import { LineitemCreateComponent } from './lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './lineitem/lineitem-edit/lineitem-edit.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+
 
 
 
@@ -59,7 +65,13 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
     SearchRequestPipe,
     RequestCreateComponent,
     RequestEditComponent,
-    RequestDetailComponent
+    RequestDetailComponent,
+    RequestlineListComponent,
+    RequestlineReviewComponent,
+    LineitemCreateComponent,
+    LineitemEditComponent,
+    RequestReviewListComponent
+
 
  
  

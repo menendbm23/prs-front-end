@@ -1,0 +1,54 @@
+<app-menu></app-menu>
+<div>
+    <div>
+        <span>Request Lines</span>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngIf = "request">
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total | currency}}</td>
+            <td>{{request.user.userName}}</td>
+            <td>
+                <button (click)="review()" class="btn btn-link">Review</button>
+            </td>
+        </tr>
+    </table>
+<td>
+
+</td>
+    <div>
+        <span>Line Item</span> | 
+        <button (click) = "create(request.id)" class="btn btn-link">Create</button>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Line Total</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor = "let lineitem of lineitems">
+            <td>{{lineitem.id}}</td>
+            <td>{{lineitem.product.name}}</td>
+            <td>{{lineitem.quantity}}</td>
+            <td>{{lineitem.product.price | currency}}</td>
+            <td>{{lineitem.product.price * lineitem.quantity | currency}}</td>
+            <td>
+                <a routerLink="/lineitem/edit/{{lineitem.id}}">Edit</a> | 
+                <button (click)="delete()" class="btn btn-link">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

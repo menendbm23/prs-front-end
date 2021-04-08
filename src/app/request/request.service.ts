@@ -19,6 +19,22 @@ export class RequestService {
     list(): Observable<Request[]> {
         return this.http.get(`${this.baseurl}`) as Observable<Request[]>;
     }
+    
+    listReview(userId: number): Observable<Request[]> {
+        return this.http.get(`${this.baseurl}/list-review/${userId}`) as Observable<Request[]>;
+    }
+    
+    getReviewed(request: Request): Observable<Request> {
+        return this.http.put(`${this.baseurl}submit-review/`, request) as Observable<Request>;
+    }
+
+    approve(request: Request): Observable<Request[]> {
+        return this.http.put(`${this.baseurl}approve/`, request) as Observable<Request[]>;
+    }
+
+    reject(request: Request): Observable<Request[]> {
+        return this.http.put(`${this.baseurl}reject/`, request) as Observable<Request[]>;
+    }
 
     get(id: number): Observable<Request> {
         return this.http.get(`${this.baseurl}/${id}`) as Observable<Request>;
@@ -33,7 +49,7 @@ export class RequestService {
     }
 
     remove(request: Request): Observable<Request> {
-        return this.http.delete(`${this.baseurl}/${Request}`) as Observable<Request>;
+        return this.http.delete(`${this.baseurl}/${request.id}`) as Observable<Request>;
     }
 
 

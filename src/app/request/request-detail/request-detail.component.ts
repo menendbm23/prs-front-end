@@ -45,6 +45,7 @@ export class RequestDetailComponent implements OnInit {
     this.rqs.get(+this.id).subscribe(
       res => {
         console.log("Request:", res);
+        this.request = res;
       },
       err => {
         console.error(err);
