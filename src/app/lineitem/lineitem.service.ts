@@ -35,6 +35,6 @@ export class LineItemService {
     }
 
     remove(lineitem: LineItem): Observable<LineItem> {
-        return this.http.delete(`${this.baseurl}/${Request}`) as Observable<LineItem>;
+        return this.http.delete(`${this.baseurl}/${lineitem.id}`) as Observable<LineItem>;
       }
 }

@@ -17,6 +17,7 @@ export class RequestlineListComponent implements OnInit {
 
   request: Request = null;
   users: User[] = [];
+  lineitem: LineItem = null;
   lineitems: LineItem[] = [];
 
   id: number = 0;
@@ -47,12 +48,15 @@ export class RequestlineListComponent implements OnInit {
     this.router.navigateByUrl(`/lineitem/edit/${id}`);
   }
 
-  delete(lineitems: LineItem) : void {
-    this.rqs.remove(this.request).subscribe(
-      res => { console.log(res); },
-      err => { console.error(err); } 
+  delete(lineitem: LineItem) : void {
+    this.lis.remove(lineitem).subscribe(
+      res => { console.log(res); this.refresh(); },
+
+      err => { console.error(err); 
+      } 
     );
   }
+
   refresh(): void {
     this.id = this.route.snapshot.params.id;
     this.lis.getLinesByPr(this.id).subscribe(

@@ -10,7 +10,6 @@
             <th>Status</th>
             <th>Total</th>
             <th>User</th>
-            <th>Action</th>
         </tr>
         <tr *ngIf = "request">
             <td>{{request.id}}</td>
@@ -33,7 +32,6 @@
             <th>Quantity</th>
             <th>Price</th>
             <th>Line Total</th>
-            <th>Actions</th>
         </tr>
         <tr *ngFor = "let lineitem of lineitems">
             <td>{{lineitem.id}}</td>
@@ -41,14 +39,17 @@
             <td>{{lineitem.quantity}}</td>
             <td>{{lineitem.product.price | currency}}</td>
             <td>{{lineitem.product.price * lineitem.quantity | currency}}</td>
-            <td>
+                
+        </tr>
 
-                <button (click)="approve()" class="btn btn-link">Approve</button> |
-                <button (click)="toggleVerify()" class="btn btn-link">Reject</button>
-                <span *ngIf="showVerify">
-                    | <button (click)="reject()" class="btn btn-link">Verify Reject</button>
-                </span>
-            </td>
+        <tr *ngIf = "request">
+
+            <button (click)="approve()" class="btn btn-link">Approve</button> |
+            <button (click)="toggleVerify()" class="btn btn-link">Reject</button>
+            <span *ngIf="showVerify">
+                | <input [(ngModel)]="request.rejectionReason" type="text" size="40in">
+                |<button (click)="reject()" class="btn btn-link">Verify Reject</button>
+            </span>
         </tr>
     </table>
 </div>

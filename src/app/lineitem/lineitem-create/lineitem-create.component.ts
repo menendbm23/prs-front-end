@@ -34,7 +34,7 @@ export class LineitemCreateComponent implements OnInit {
     this.lis.create(this.lineitems).subscribe(
       res => {
         console.log("Create Successful");
-        this.router.navigateByUrl("requests/list");
+        this.router.navigateByUrl(`requestline/list/${this.lineitems.request.id}`);
       },
       err => {
         console.error(err);

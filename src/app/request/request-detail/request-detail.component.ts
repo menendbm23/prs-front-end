@@ -37,8 +37,19 @@ export class RequestDetailComponent implements OnInit {
   }
 
   edit(): void {
-    this.router.navigateByUrl(`/requests/edit/${this.id}`);
+    this.rqs.update(this.request).subscribe(
+      res => {
+        console.log("Edit Successful!");
+        this.router.navigateByUrl("requests/list");
+      },
+      err => {
+        console.error(err);
+      }
+    );
+ 
+   
   }
+
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;

@@ -21,6 +21,7 @@ export class RequestlineReviewComponent implements OnInit {
   lineitems: LineItem[] = [];
   requestId: number = 0;
   id: number = 0;
+  showVerify: boolean = false;
 
   constructor(
     private sys: SystemService,
@@ -31,6 +32,49 @@ export class RequestlineReviewComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  toggleVerify(): void {
+    this.showVerify = !this.showVerify;
+  }
+
+  approve(): void {
+    this.rqs.approve(this.request).subscribe(
+      res => { console.log("Success", res); this.refresh(); },
+
+      err => { console.error(err);
+      }
+    )
+  }
+
+  reject(): void {
+    this.rqs.reject(this.request).subscribe(
+      res => { console.log("Success", res); this.refresh(); },
+
+      err => { console.error(err); 
+      } 
+    );
+  }
+
+  refresh(): void {
+    this.id = this.route.snapshot.params.id;
+    this.lis.getLinesByPr(this.id).subscribe(
+      res => {
+        console.log("LineItems:", res);
+        this.lineitems = res;
+      },
+      err => {
+        console.error(err);
+      }
+    );
+    this.rqs.get(+this.id).subscribe(
+      res => {
+        console.log("Request:", res);
+        this.request = res;
+      },
+      err => {
+        console.error(err);
+  }
+    );
+  }
 
   ngOnInit(): void {
     this.requestId = +this.route.snapshot.params.id;
